@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CondominioSmart.Views.ScannerPage"
+    BackgroundColor="Transparent"
+    xmlns:Zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+
+
+
+    <Grid
+        Margin="0"
+        ColumnSpacing="0"
+        RowSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout
+            Grid.Row="0"
+            BackgroundColor="#4C4C4C"
+            HorizontalOptions="Fill"
+            Spacing="0"
+            VerticalOptions="Fill">
+
+            <Grid
+                Margin="0"
+                ColumnSpacing="0"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="{Binding IsVisible}"
+                RowSpacing="0"
+                VerticalOptions="FillAndExpand">
+
+                <Zxing:ZXingScannerView
+                    HorizontalOptions="Center"
+                    IsAnalyzing="{Binding IsAnalyzing}"
+                    IsScanning="{Binding IsScanning}"
+                    Result="{Binding Result, Mode=TwoWay}"
+                    ScanResultCommand="{Binding ScanResultCommand}"
+                    VerticalOptions="Start">
+                </Zxing:ZXingScannerView>
+
+                <Zxing:ZXingDefaultOverlay 
+                            Opacity="0.9" 
+                            ShowFlashButton="False">
+                </Zxing:ZXingDefaultOverlay>
+
+            </Grid>
+        </StackLayout>
+
+
+
+
+
+        <!--<Grid
+            Grid.Row="1"
+            Margin="20,0,20,0"
+            ColumnSpacing="0"
+            RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0"
+                HorizontalOptions="Center"
+                Orientation="Horizontal">
+                    <Button
+                    Margin="0,0,3,0"
+                    BackgroundColor="#D3D3D3"
+                    Command="{Binding QRCodeScannerCommand}"
+                    HeightRequest="50"
+                    Text="QRCode"
+                    TextColor="White"
+                    WidthRequest="160" />
+                    <Button
+                    Margin="3,0,0,0"
+                    BackgroundColor="#0056A8"
+                    Command="{Binding BarCodeScannerCommand}"
+                    HeightRequest="50"
+                    Text="BarCode"
+                    TextColor="White"
+                    WidthRequest="160" />
+                </StackLayout>
+
+                <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0"
+                HorizontalOptions="Fill"
+                Text="Modelo"
+                VerticalOptions="Center" />
+                <Entry
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0"
+                HorizontalOptions="Fill"
+                Placeholder="Digite o tipo de máquina"
+                Text="{Binding Teste}"
+                VerticalOptions="Center" />
+
+                <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="0"
+                HorizontalOptions="Fill"
+                Text="Número da máquina"
+                VerticalOptions="Center" />
+                <Entry
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="0"
+                HorizontalOptions="Fill"
+                Placeholder="Por favor, digite o tipo de máquina"
+                Text="{Binding MODELID}"
+                VerticalOptions="Center" />
+
+                <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="0"
+                HorizontalOptions="Fill"
+                Text="Solicitação de vendas"
+                VerticalOptions="Center" />
+                <Entry
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="0"
+                HorizontalOptions="Fill"
+                Placeholder="Por favor, digite o tipo de máquina"
+                VerticalOptions="Center" />
+
+                <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                Margin="0"
+                HorizontalOptions="Fill"
+                Text="O cliente concorda em registrar"
+                VerticalOptions="Center" />
+                <Entry
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="0"
+                HorizontalOptions="Fill"
+                Placeholder="Por favor, digite o tipo de máquina"
+                VerticalOptions="Center" />
+
+                <Button
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="#0056A8"
+                HeightRequest="60"
+                HorizontalOptions="Fill"
+                Text="Completar"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+            </Grid>-->
+    </Grid>
+
+</ContentPage>

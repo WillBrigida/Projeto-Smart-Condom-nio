@@ -31,6 +31,16 @@
             Text="Portaria">
         </Button>
 
+        <Button
+            Command="{Binding ScannerCommand}"
+            Text="Scanner">
+        </Button>
+
+        <Entry
+            Text="{Binding Entry}">
+            
+        </Entry>
+
     </StackLayout>
 
 </ContentPage>

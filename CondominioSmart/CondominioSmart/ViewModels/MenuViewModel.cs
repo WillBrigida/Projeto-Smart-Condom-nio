@@ -1,4 +1,5 @@
 ﻿using CondominioSmart.Services;
+using CondominioSmart.Views;
 using CondominioSmart.Views.PopUps;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -12,6 +13,15 @@ namespace CondominioSmart.ViewModels
     public class MenuViewModel : BaseViewModel
     {
         #region Propriedade
+        private string _entry;
+
+        public string Entry
+        {
+            get { return _entry; }
+            set {SetProperty(ref _entry , value); }
+        }
+
+
         private readonly INavigationService _navigationService;
         private readonly IMessegeService _messegeService;
         #endregion
@@ -21,6 +31,8 @@ namespace CondominioSmart.ViewModels
         public ICommand InformacoesCommand { get { return new Command(OnInformacoesCommandExecute); } }
         public ICommand PortariaCommand { get { return new Command(OnPortariaCommandExecute); } }
         public ICommand AtendimentosCommand { get { return new Command(OnAtendimentosCommandExecute); } }
+        public ICommand ScannerCommand { get { return new Command(OnScannerCommandExecute); } }
+
 
         #endregion
 
@@ -55,7 +67,12 @@ namespace CondominioSmart.ViewModels
         {
             this._navigationService.NavigationForAtendimentosPage();
         }
-        
+
+
+        private async void OnScannerCommandExecute(object obj)
+        {
+            await App.Current.MainPage.Navigation.PushModalAsync(new ScannerPage());
+        }
         #endregion
     }
 }

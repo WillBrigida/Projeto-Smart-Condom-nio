@@ -14,6 +14,7 @@ namespace CondominioSmart.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
