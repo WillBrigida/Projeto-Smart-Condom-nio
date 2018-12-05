@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    x:Class="CondominioSmart.Views.PopUps.PopUpCheckOk">
+
+
+
+    <Frame 
+        BackgroundColor="AliceBlue  "
+        Padding="-5"
+        Margin="50,100"
+        CornerRadius="3"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+
+        <StackLayout
+            BackgroundColor="White"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+
+
+
+            <forms:AnimationView
+            Margin="40"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            x:Name="animationView"
+            Animation="check.json" 
+	        AutoPlay="true"
+            Loop="False">
+            </forms:AnimationView>
+
+
+            <Label
+                Margin="0,0,0,100"
+                Text="SUCESSO!"
+                HorizontalOptions="Center"
+                FontSize="Large"
+                FontAttributes="Bold">
+            </Label>
+
+
+        </StackLayout>
+
+    </Frame>
+    
+</pages:PopupPage>

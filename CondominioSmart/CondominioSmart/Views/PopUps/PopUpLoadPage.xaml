@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    x:Class="CondominioSmart.Views.PopUps.PopUpLoadPage">
+
+
+
+    <Frame
+        
+        CornerRadius="2"
+        HasShadow="True"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        BackgroundColor="White" 
+        Margin="20"
+        Padding="30"
+        HeightRequest="70"
+        WidthRequest="400">
+
+        <StackLayout>
+            <Label 
+                Text="{Binding Titulo}" 
+                HorizontalOptions="Center"
+                FontSize="Large"
+                FontAttributes="Bold"
+                TextColor="Black"
+                 VerticalOptions="StartAndExpand"/>
+
+            <StackLayout
+                Spacing="5"
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+
+                <ActivityIndicator
+                IsRunning="True"/>
+
+                <Label
+                    VerticalOptions="CenterAndExpand"
+                    Text="{Binding Mensagem}"
+                    FontSize="Default"/>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+    
+</pages:PopupPage>

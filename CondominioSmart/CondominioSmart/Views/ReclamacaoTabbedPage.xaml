@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tabs="clr-namespace:CondominioSmart.Views"
+             x:Class="CondominioSmart.Views.ReclamacaoTabbedPage"
+             BarBackgroundColor="#2196F3"
+             BarTextColor="White"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+            Title="Teste">
+
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem 
+            Text="{Binding Contador}"/>
+    </TabbedPage.ToolbarItems>
+
+    <tabs:ReclamacoesPage Title="Abrir"/>
+    <tabs:ListaReclamacoesPage Title="Lista"/>
+
+
+</TabbedPage>

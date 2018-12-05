@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CondominioSmart.Views.ReclamacoesPage"
+    Title="Reclamações">
+
+
+
+    <StackLayout>
+
+        <Entry 
+                Placeholder="Item" 
+                Text="{Binding TextoEntry}"/>
+        
+
+        <Button
+            Command="{Binding AddCommand}"
+            Text="Add">
+        </Button>
+
+    </StackLayout>
+
+</ContentPage>
