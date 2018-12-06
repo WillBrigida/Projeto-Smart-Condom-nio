@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CondominioSmart.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,17 @@ namespace CondominioSmart.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MenuPage : ContentPage
 	{
-		public MenuPage ()
+        private MenuViewModel ViewModel => BindingContext as MenuViewModel;
+
+        public MenuPage ()
 		{
 			InitializeComponent ();
 		}
-	}
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await ViewModel.LoadAsync();
+        }
+    }
 }

@@ -13,10 +13,17 @@ namespace CondominioSmart.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ReclamacoesPage : ContentPage
 	{
-		public ReclamacoesPage ()
+        private ReclamacoesViewModel ViewModel => BindingContext as ReclamacoesViewModel;
+
+        public ReclamacoesPage ()
 		{
 			InitializeComponent ();
-            this.BindingContext = new ReclamacoesViewModel();
 		}
-	}
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await ViewModel.LoadAsync();
+        }
+    }
 }

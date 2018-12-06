@@ -22,7 +22,6 @@ namespace CondominioSmart.ViewModels
         }
 
 
-        private readonly INavigationService _navigationService;
         private readonly IMessegeService _messegeService;
         #endregion
 
@@ -39,39 +38,39 @@ namespace CondominioSmart.ViewModels
         #region Construtor
         public MenuViewModel()
         {
-            _navigationService = DependencyService.Get<INavigationService>();   
         }
         #endregion
 
         #region Métodos
 
-        private void OnReclamacoesCommandExecute(object obj)
+        private async void OnReclamacoesCommandExecute(object obj)
         {
-            this._navigationService.NavigationForReclamacaoTabbedPagePage();
+            await Navigation.PushAsync<ReclamacaoTabbedViewModel>(false);
         }
 
 
-        private void OnInformacoesCommandExecute(object obj)
+        private async void OnInformacoesCommandExecute(object obj)
         {
-            this._navigationService.NavigationForInformacoesPage();
+            await Navigation.PushAsync<InformacoesViewModel>(false);
         }
 
 
-        private void OnPortariaCommandExecute(object obj)
+        private async void OnPortariaCommandExecute(object obj)
         {
-            this._navigationService.NavigationForPortariaPage();
+            await Navigation.PushAsync<PortariaViewModel>(false);
         }
 
 
-        private void OnAtendimentosCommandExecute(object obj)
+        private async void OnAtendimentosCommandExecute(object obj)
         {
-            this._navigationService.NavigationForAtendimentosPage();
+            await Navigation.PushAsync<AtendimentosViewModel>(false);
         }
 
 
         private async void OnScannerCommandExecute(object obj)
         {
-            await App.Current.MainPage.Navigation.PushModalAsync(new ScannerPage());
+            await Navigation.PushAsync<ScannerViewModel>(true);
+
         }
         #endregion
     }

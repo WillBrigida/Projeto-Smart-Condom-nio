@@ -12,7 +12,6 @@ namespace CondominioSmart.ViewModels.PopUpViewModels
     public class PopUpLoadViewModel : BaseViewModel
     {
         #region Propriedade
-        private readonly INavigationService _navigationService;
         private readonly IMessegeService _messegeService;
         static string m;
         static string t;
@@ -43,7 +42,6 @@ namespace CondominioSmart.ViewModels.PopUpViewModels
         #region Construtor
         public PopUpLoadViewModel()
         {
-            _navigationService = DependencyService.Get<INavigationService>();
             Titulo = "Por favor, aguarde!";
             Mensagem = "Carregando";
         }
@@ -68,7 +66,6 @@ namespace CondominioSmart.ViewModels.PopUpViewModels
         {
             titulo = "Este";
             mensagem = "fdljladk";
-            await _navigationService.NavigationForPopUpLoadPage(titulo, mensagem);
         }
 
         

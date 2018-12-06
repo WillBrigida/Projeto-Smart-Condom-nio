@@ -19,7 +19,6 @@ namespace CondominioSmart.ViewModels
             set { SetProperty(ref _textoEntry, value); }
         }
 
-        private readonly INavigationService _navigationService;
         private readonly IMessegeService _messegeService;
         #endregion
 
@@ -31,7 +30,6 @@ namespace CondominioSmart.ViewModels
         #region Construtor
         public ReclamacoesViewModel()
         {
-            _navigationService = DependencyService.Get<INavigationService>();
         }
         #endregion
 

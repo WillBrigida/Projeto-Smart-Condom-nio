@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CondominioSmart.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,17 @@ namespace CondominioSmart.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PortariaPage : ContentPage
 	{
-		public PortariaPage ()
+        private PortariaViewModel ViewModel => BindingContext as PortariaViewModel;
+
+        public PortariaPage ()
 		{
 			InitializeComponent ();
 		}
-	}
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await ViewModel.LoadAsync();
+        }
+    }
 }

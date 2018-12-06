@@ -2,15 +2,13 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    x:Class="CondominioSmart.Views.LoginPage">
+    x:Class="CondominioSmart.Views.LoginPage"
+    Title="Login">
     
     
     
   
-        <StackLayout
-            BindingContext="{Binding Login}"
-            HorizontalOptions="Center">
+        <StackLayout>
 
             <Button
                 Command="{Binding LoginCommand}"

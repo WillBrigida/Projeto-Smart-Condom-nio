@@ -19,7 +19,6 @@ namespace CondominioSmart.ViewModels
         }
 
 
-        private readonly INavigationService _navigationService;
         private readonly IMessegeService _messegeService;
         #endregion
 
@@ -30,16 +29,15 @@ namespace CondominioSmart.ViewModels
         #region Construtor
         public LoginViewModel()
         {
-            _navigationService = DependencyService.Get<INavigationService>();
             Confirmacao = true;
         }
         #endregion
 
         #region Métodos
 
-        private void OnLoginCommandExecute(object obj)
+        private async void OnLoginCommandExecute(object obj)
         {
-            _navigationService.NavigationForMenu();
+            await Navigation.PushAsync<MenuViewModel>(false);
         }
 
         #endregion

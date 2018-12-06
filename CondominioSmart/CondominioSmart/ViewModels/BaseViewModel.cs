@@ -1,8 +1,10 @@
-﻿using System;
+﻿using CondominioSmart.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CondominioSmart.ViewModels
 {
@@ -148,6 +150,11 @@ namespace CondominioSmart.ViewModels
             set { SetProperty(ref saldo, value); }
         }
         #endregion
+        public virtual Task LoadAsync(object[] args) => Task.FromResult(true);
+
+        public virtual Task LoadAsync() => Task.FromResult(true);
+
+        protected NavigationService Navigation => NavigationService.Current;
 
     }
 }

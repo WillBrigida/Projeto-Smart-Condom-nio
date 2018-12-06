@@ -12,7 +12,7 @@ namespace CondominioSmart
     {
         public App()
         {
-            DependencyService.Register<INavigationService, NavigationService>();
+            //DependencyService.Register<INavigationService, NavigationService>();
             DependencyService.Register<IMessegeService, MessegeService>();
 
             //Versionamento do esquema do RealmDB

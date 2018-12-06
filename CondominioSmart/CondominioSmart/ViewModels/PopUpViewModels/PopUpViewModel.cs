@@ -11,14 +11,12 @@ namespace CondominioSmart.ViewModels.PopUpViewModels
     public class PopUpViewModel : BaseViewModel
     {
         #region Propriedades
-        private readonly INavigationService _navigationService;
         private readonly IMessegeService _messegeService;
         #endregion
 
         #region Construtor
         public PopUpViewModel()
         {
-            _navigationService = DependencyService.Get<INavigationService>();
 
         }
         #endregion
@@ -33,7 +31,6 @@ namespace CondominioSmart.ViewModels.PopUpViewModels
 
         private async void OnBackPopUpExecute()
         {
-            this._navigationService.NavigationForPopPage();
         }
 
         #endregion
