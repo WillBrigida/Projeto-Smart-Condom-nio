@@ -8,7 +8,9 @@
              BarTextColor="White"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.ToolbarPlacement="Bottom"
-            Title="Teste">
+             android:TabbedPage.BarItemColor="#66FFFFFF"
+             android:TabbedPage.BarSelectedItemColor="White"
+             Title="Teste">
 
 
     <TabbedPage.ToolbarItems>
@@ -16,8 +18,8 @@
             Text="{Binding Contador}"/>
     </TabbedPage.ToolbarItems>
 
-    <tabs:ReclamacoesPage Title="Abrir"/>
-    <tabs:ListaReclamacoesPage Title="Lista"/>
+    <!--<tabs:ReclamacoesPage Title="Abrir" Icon="baseline_date_range_white_24dp"/>-->
+    <tabs:ListaReclamacoesPage Title="Lista" Icon="baseline_date_range_white_24dp"/>
 
 
 </TabbedPage>

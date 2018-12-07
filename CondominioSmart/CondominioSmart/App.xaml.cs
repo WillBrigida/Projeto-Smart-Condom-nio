@@ -22,7 +22,7 @@ namespace CondominioSmart
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new ReclamacaoTabbedPage());
         }
 
         protected override void OnStart()
