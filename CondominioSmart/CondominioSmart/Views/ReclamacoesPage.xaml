@@ -18,6 +18,7 @@
             Command="{Binding AddCommand}"
             Text="Add">
         </Button>
+     
 
     </StackLayout>
 

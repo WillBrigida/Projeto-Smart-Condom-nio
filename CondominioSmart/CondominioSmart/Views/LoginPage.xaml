@@ -3,18 +3,95 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CondominioSmart.Views.LoginPage"
-    Title="Login">
-    
-    
-    
-  
-        <StackLayout>
+    BackgroundColor="#2a81d2"
+    NavigationPage.HasNavigationBar="False">
 
-            <Button
-                Command="{Binding LoginCommand}"
-                Text="Login">
-            </Button>
-            
+   
+
+    
+        <StackLayout
+            VerticalOptions="FillAndExpand">
+
+            <Grid
+                RowSpacing="25">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image
+                    Grid.Row="1"
+                    HeightRequest="40"
+                    WidthRequest="40"
+                    Source="logo.png">
+                </Image>
+
+              
+
+                <StackLayout
+                    Grid.Row="2"
+                    Spacing="15"
+                    Padding="20"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="FillAndExpand">
+
+                    <Entry
+                            VerticalOptions="Center"
+                            Keyboard="Email"
+                            Placeholder=" Login"
+                        BackgroundColor="White"
+                            TextColor="Black"/>
+
+
+
+                    <Entry
+                        
+                            VerticalOptions="Center"
+                            IsPassword="True"
+                        BackgroundColor="White"
+                        
+                            Placeholder=" Senha"
+                            TextColor="Black"/>
+
+
+
+        <Button 
+                        
+                        Text="ok"
+                        FontSize="14"
+                        BackgroundColor="White"
+                        WidthRequest="87"
+                        HeightRequest="42"
+                        TextColor="OrangeRed"
+                        FontAttributes="Bold"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Command="{Binding LoginCommand}"  />
+
+  
+
+
+                    <ActivityIndicator
+                        Margin="0,-50,26,0"
+                        HorizontalOptions="End"
+                        Color="OrangeRed"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        IsRunning="{Binding IsRunning}"/>
+
+                   
+                </StackLayout>
+            </Grid>
+
+
+           
+
         </StackLayout>
+   
+
+
+
+   
 
 </ContentPage>

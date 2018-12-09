@@ -18,7 +18,9 @@
             Text="{Binding Contador}"/>
     </TabbedPage.ToolbarItems>
 
-    <!--<tabs:ReclamacoesPage Title="Abrir" Icon="baseline_date_range_white_24dp"/>-->
+    
+
+    <tabs:ReclamacoesPage Title="Abrir" Icon="baseline_date_range_white_24dp"/>
     <tabs:ListaReclamacoesPage Title="Lista" Icon="baseline_date_range_white_24dp"/>
 
 

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace CondominioSmart.ViewModels
 {
-    public class ListaRecamacoesViewModel : BaseViewModel
+    public class ListaReclamacoesViewModel : BaseViewModel
     {
         private ObservableCollection<Message> _listaItem;
 
@@ -17,7 +17,7 @@ namespace CondominioSmart.ViewModels
             set { SetProperty(ref _listaItem, value); }
         }
 
-        public ListaRecamacoesViewModel()
+        public ListaReclamacoesViewModel()
         {
             ListaItem = new ObservableCollection<Message>();
             AdicionarLista();

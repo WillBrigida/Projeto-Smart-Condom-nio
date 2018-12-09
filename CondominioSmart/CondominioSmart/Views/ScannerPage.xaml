@@ -43,7 +43,7 @@
 
                 <Zxing:ZXingDefaultOverlay 
                             Opacity="0.9" 
-                            ShowFlashButton="False">
+                            ShowFlashButton="True">
                 </Zxing:ZXingDefaultOverlay>
 
             </Grid>

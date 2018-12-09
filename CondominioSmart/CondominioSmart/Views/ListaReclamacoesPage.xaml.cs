@@ -7,16 +7,17 @@ namespace CondominioSmart.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ListaReclamacoesPage : ContentPage
 	{
-        ListaRecamacoesViewModel ViewModel => BindingContext as ListaRecamacoesViewModel;
+        //ListaReclamacoesViewModel ViewModel => BindingContext as ListaReclamacoesViewModel;
 		public ListaReclamacoesPage ()
 		{
 			InitializeComponent ();
+            this.BindingContext = new ListaReclamacoesViewModel();
 		}
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            await ViewModel.LoadAsync();
-        }
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    await ViewModel.LoadAsync();
+        //}
     }
 }

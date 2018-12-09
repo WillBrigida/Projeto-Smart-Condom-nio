@@ -12,7 +12,7 @@ namespace CondominioSmart.Views
         public ReclamacaoTabbedPage ()
         {
             InitializeComponent();
-            this.BindingContext = new ReclamacaoTabbedViewModel();
+            //this.BindingContext = new ReclamacaoTabbedViewModel();
         }
 
         protected override async void OnAppearing()

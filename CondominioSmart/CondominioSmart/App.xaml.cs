@@ -22,7 +22,7 @@ namespace CondominioSmart
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ReclamacaoTabbedPage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
@@ -40,12 +40,6 @@ namespace CondominioSmart
             // Handle when your app resumes
         }
 
-        private bool ValidacaoLogin()
-        {
-            if (true)
-            {
-                return true;
-            }
-        }
+       
     }
 }

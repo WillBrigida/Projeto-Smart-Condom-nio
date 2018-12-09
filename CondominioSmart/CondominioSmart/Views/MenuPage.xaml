@@ -3,7 +3,18 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CondominioSmart.Views.MenuPage"
-    Title="Menu">
+    Title="Menu"
+     NavigationPage.HasBackButton="True">
+
+    <NavigationPage.TitleView>
+        <StackLayout
+            Padding='0,-6,-6,6'
+            HorizontalOptions="Start">
+            <SearchBar>
+                
+            </SearchBar>
+        </StackLayout>
+    </NavigationPage.TitleView>
 
 
 
