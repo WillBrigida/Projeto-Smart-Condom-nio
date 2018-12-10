@@ -18,7 +18,7 @@ namespace CondominioSmart.ViewModels
         public string Entry
         {
             get { return _entry; }
-            set {SetProperty(ref _entry , value); }
+            set { SetProperty(ref _entry, value); }
         }
 
 
@@ -31,7 +31,7 @@ namespace CondominioSmart.ViewModels
         public ICommand PortariaCommand { get { return new Command(OnPortariaCommandExecute); } }
         public ICommand AtendimentosCommand { get { return new Command(OnAtendimentosCommandExecute); } }
         public ICommand ScannerCommand { get { return new Command(OnScannerCommandExecute); } }
-
+        public ICommand BuscaCommand { get { return new Command(OnBuscaExecute); } }
 
         #endregion
 
@@ -70,8 +70,15 @@ namespace CondominioSmart.ViewModels
         private async void OnScannerCommandExecute(object obj)
         {
             await Navigation.PushAsync<ScannerViewModel>(true);
-
         }
+
+
+        private async void OnBuscaExecute(object obj)
+        {
+            await Navigation.PushAsync<ListaBuscaViewModel>(false);
+        }
+
+
         #endregion
     }
 }

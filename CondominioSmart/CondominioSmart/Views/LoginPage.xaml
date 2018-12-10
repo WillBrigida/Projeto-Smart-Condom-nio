@@ -5,20 +5,20 @@
     x:Class="CondominioSmart.Views.LoginPage"
     BackgroundColor="#2a81d2"
     NavigationPage.HasNavigationBar="False">
-
-   
-
     
-        <StackLayout
-            VerticalOptions="FillAndExpand">
+    
 
-            <Grid
-                RowSpacing="25">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25" />
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+    <StackLayout
+        VerticalOptions="FillAndExpand">
+
+        <Grid
+            RowSpacing="25">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
                 <Image
                     Grid.Row="1"
@@ -69,7 +69,6 @@
                         VerticalOptions="Center"
                         Command="{Binding LoginCommand}"  />
 
-  
 
 
                     <ActivityIndicator

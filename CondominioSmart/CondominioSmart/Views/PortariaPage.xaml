@@ -2,15 +2,21 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="CondominioSmart.Views.PortariaPage">
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="CondominioSmart.Views.PortariaPage"
+    Title="Portaria">
     
     
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Button
+                Command="{Binding PopUpCheckOKLoadCommand}"
+                Text="PopUpCheckOk">
+                
+            </Button>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

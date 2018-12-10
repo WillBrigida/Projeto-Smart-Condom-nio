@@ -10,7 +10,7 @@
              android:TabbedPage.ToolbarPlacement="Bottom"
              android:TabbedPage.BarItemColor="#66FFFFFF"
              android:TabbedPage.BarSelectedItemColor="White"
-             Title="Teste">
+             Title="Reclamações">
 
 
     <TabbedPage.ToolbarItems>

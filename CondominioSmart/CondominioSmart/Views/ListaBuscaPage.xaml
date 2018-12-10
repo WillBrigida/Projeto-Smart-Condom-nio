@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CondominioSmart.Views.ListaBuscaPage"
+            NavigationPage.HasBackButton="True">
+
+    <NavigationPage.TitleView>
+        <StackLayout
+            HorizontalOptions="FillAndExpand">
+            <Button
+                Text="Busca"
+                Padding="0,0,150,0"
+                Margin="0,0,15,0"
+                HeightRequest="35"
+                BorderRadius="17"
+                BorderWidth=".9"
+                BorderColor="Gray"
+                Command="{Binding ListaCommand}">
+
+            </Button>
+        </StackLayout>
+    </NavigationPage.TitleView>
+</ContentPage>
