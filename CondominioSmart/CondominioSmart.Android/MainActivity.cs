@@ -4,7 +4,12 @@ using Android.OS;
 
 namespace CondominioSmart.Droid
 {
-    [Activity(Label = "CondominioSmart", Icon = "@mipmap/icon", Theme = "@style/MainTheme",  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "CondominioSmart",
+       Icon = "@mipmap/icon",
+       Theme = "@style/MainTheme",
+       ScreenOrientation = ScreenOrientation.Portrait)] // Sem rotação de tela
+       //ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

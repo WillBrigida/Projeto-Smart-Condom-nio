@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CondominioSmart.Views.PopsPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Button
+                Command="{Binding PopUpCheckOKLoadCommand}"
+                Text="Ok">
+            </Button>
+
+            <Button
+                Command="{Binding PopUpLoadCommand}"
+                Text="Carregando">
+            </Button>
+
+            <Button
+                Command="{Binding PopUpPageCommand}"
+                Text="PopUp">
+            </Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

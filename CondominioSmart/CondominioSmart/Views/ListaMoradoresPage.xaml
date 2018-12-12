@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CondominioSmart.Views.ListaMoradoresPage"
+    Title="Moradores">
+
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                CachingStrategy ="RecycleElement"
+                SelectedItem="false"
+                SeparatorVisibility="Default"
+                HasUnevenRows="True"  
+                IsVisible="True"
+                BackgroundColor="White"
+                ItemsSource="{Binding ListaCondominos}">
+                
+                <!-- HasUnevenRows  true - tamanho de acordo com a quantidade. false - um linha apenas-->
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Margin="10">
+                                <Label
+                                    Text="{Binding Nome }"
+                                    FontAttributes="Bold"
+                                    FontSize="Medium">
+                                </Label>
+                                <Label
+                                    Text="{Binding SobreNome }">
+                                </Label>
+                                <Label
+                                    Text="{Binding Apartamento }">
+                                </Label>
+                                <Label
+                                    Text="{Binding Telefone }">
+                                </Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

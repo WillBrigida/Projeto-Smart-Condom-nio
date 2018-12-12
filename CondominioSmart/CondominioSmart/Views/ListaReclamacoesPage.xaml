@@ -15,13 +15,14 @@
                 SeparatorVisibility="Default"
                 HasUnevenRows="False"
                 IsVisible="True"
-                ItemsSource="{Binding ListaItem}">
+                ItemSelected="Handle_ItemSelected"
+                ItemsSource="{Binding ListaReclamacao}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
                                 <Label
-                                    Text="{Binding Valor }">
+                                    Text="{Binding TitleReclamacao }">
                                 </Label>
                             </StackLayout>
                         </ViewCell>

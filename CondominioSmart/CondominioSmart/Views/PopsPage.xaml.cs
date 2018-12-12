@@ -11,12 +11,19 @@ using Xamarin.Forms.Xaml;
 namespace CondominioSmart.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ReclamacoesPage : ContentPage
-	{
-        public ReclamacoesPage()
+    public partial class PopsPage : ContentPage
+    {
+        PopsViewModel ViewModel => BindingContext as PopsViewModel;
+
+        public PopsPage()
         {
             InitializeComponent();
-            this.BindingContext = new ReclamacoesViewModel();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await ViewModel.LoadAsync();
         }
     }
 }

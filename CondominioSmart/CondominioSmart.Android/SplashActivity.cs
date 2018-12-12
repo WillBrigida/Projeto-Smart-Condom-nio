@@ -4,7 +4,11 @@ using Android.OS;
 
 namespace CondominioSmart.Droid
 {
-    [Activity(Label = "CondominioSmart", Icon = "@mipmap/icon", NoHistory = true, Theme = "@style/SplashTheme", 
+    [Activity(Label = 
+        "CondominioSmart", 
+        Icon = "@mipmap/icon", 
+        NoHistory = true, 
+        Theme = "@style/SplashTheme", 
         MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class SplashActivity : Activity
     {

@@ -5,18 +5,27 @@
     xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     x:Class="CondominioSmart.Views.PortariaPage"
     Title="Portaria">
-    
-    
-    
+
+
+
     <ContentPage.Content>
         <StackLayout>
 
             <Button
-                Command="{Binding PopUpCheckOKLoadCommand}"
-                Text="PopUpCheckOk">
-                
+                Command="{Binding FuncionariosCommand}"
+                Text="Funcionários">
             </Button>
-            
+
+            <Button
+                Command="{Binding ContatosCommand}"
+                Text="Contatos">
+            </Button>
+
+            <Button
+                Command="{Binding CorrespondenciaCommand}"
+                Text="Correspondência">
+            </Button>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -26,7 +26,7 @@ namespace CondominioSmart.ViewModels
 
         private void MudarContador()
         {
-            MessagingCenter.Subscribe<Message>(this, "Confirmacao", message =>
+            MessagingCenter.Subscribe<Reclamacao>(this, "Confirmacao", message =>
             {
                 cont++;
                 Contador = cont;

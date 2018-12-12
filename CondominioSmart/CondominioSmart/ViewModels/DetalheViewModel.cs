@@ -1,5 +1,4 @@
 ﻿using CondominioSmart.Models;
-using CondominioSmart.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +7,7 @@ using Xamarin.Forms;
 
 namespace CondominioSmart.ViewModels
 {
-    public class ReclamacoesViewModel : BaseViewModel
+    public class DetalheViewModel : BaseViewModel
     {
         #region Propriedade
         private string _titleReclamacao;
@@ -28,37 +27,24 @@ namespace CondominioSmart.ViewModels
             set { SetProperty(ref _textReclamacao, value); }
         }
 
-        private readonly IMessegeService _messegeService;
-        private readonly IReclamacaoRepository _reclamacaoRepository;
         #endregion
 
         #region Commands
-        public ICommand AddCommand { get { return new Command(OnAddExecute); } }
 
         #endregion
 
         #region Construtor
-        public ReclamacoesViewModel()
+        public DetalheViewModel(Reclamacao reclamacao)
         {
-            _reclamacaoRepository = new ReclamacaoRepository();
+            this.TextReclamacao = reclamacao.TextReclamacao;
+            this.TitleReclamacao = reclamacao.TitleReclamacao;
         }
         #endregion
 
         #region Métodos
 
-        private void OnAddExecute(object obj)
-        {
+        
 
-
-
-            if (!String.IsNullOrWhiteSpace(TitleReclamacao))
-            {
-
-
-                MessagingCenter.Send(new Reclamacao { TitleReclamacao = this.TitleReclamacao, TextReclamacao = this.TextReclamacao }, "Confirmacao");
-            }
-        }
         #endregion
     }
 }
-

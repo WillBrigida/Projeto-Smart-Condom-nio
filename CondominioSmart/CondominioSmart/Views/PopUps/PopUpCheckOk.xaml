@@ -20,29 +20,31 @@
             BackgroundColor="White"
             VerticalOptions="FillAndExpand"
             HorizontalOptions="FillAndExpand">
+
+
             <Button
-                Command="{Binding ExitPOpUpCommand}"
-                Text="x"
-                FontSize="Large"
+                Clicked="OnButtonClicked"
+                Text="X"
+                FontSize="20"
                 Margin="10"
                 VerticalOptions="Start"
                 HorizontalOptions="End"
                 HeightRequest="50"
                 WidthRequest="50"
                 BackgroundColor="Transparent">
-                
+
             </Button>
 
 
 
             <forms:AnimationView
-            Margin="40"
-            VerticalOptions="FillAndExpand"
-            HorizontalOptions="FillAndExpand"
-            x:Name="animationView"
-            Animation="check.json" 
-	        AutoPlay="true"
-            Loop="False">
+                Margin="20"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                x:Name="animationView"
+                Animation="check.json" 
+	            AutoPlay="true"
+                Loop="False">
             </forms:AnimationView>
 
 

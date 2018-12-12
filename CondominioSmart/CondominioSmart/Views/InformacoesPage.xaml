@@ -4,14 +4,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CondominioSmart.Views.InformacoesPage"
     Title="Informaçoes">
+
     
-    
-    
-    <ContentPage.Content>
+
+
+        <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Button
+                Command="{Binding MoradoresCommand}"
+                Text="Moradores">
+            </Button>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
