@@ -48,14 +48,9 @@ namespace CondominioSmart.ViewModels
 
         private void OnAddExecute(object obj)
         {
-
-
-
             if (!String.IsNullOrWhiteSpace(TitleReclamacao))
             {
-
-
-                MessagingCenter.Send(new Reclamacao { TitleReclamacao = this.TitleReclamacao, TextReclamacao = this.TextReclamacao }, "Confirmacao");
+                MessagingCenter.Send(new Teste {  Mensagem = "Teste"}, "Confirmacao");
             }
         }
         #endregion

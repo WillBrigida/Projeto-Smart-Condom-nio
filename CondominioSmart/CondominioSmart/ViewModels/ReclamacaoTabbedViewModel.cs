@@ -1,4 +1,5 @@
 ﻿using CondominioSmart.Models;
+using CondominioSmart.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,7 @@ namespace CondominioSmart.ViewModels
 {
     public class ReclamacaoTabbedViewModel : BaseViewModel
     {
+        #region Propriedade
         private int _contador;
 
         public int Contador
@@ -16,21 +18,36 @@ namespace CondominioSmart.ViewModels
             set { SetProperty(ref _contador, value); }
         }
 
+        private readonly IReclamacaoRepository _reclamacaoRepository;
 
+        #endregion
+
+        #region Commands
+
+        #endregion
+
+        #region Construtor
         public ReclamacaoTabbedViewModel()
         {
-            MudarContador();
+            _reclamacaoRepository = new ReclamacaoRepository();
+            Init();
         }
+        #endregion
 
-        int cont = 0;
+        #region Métodos
 
         private void MudarContador()
         {
             MessagingCenter.Subscribe<Reclamacao>(this, "Confirmacao", message =>
             {
-                cont++;
-                Contador = cont;
+                Init();
             });
         }
+
+        private void Init()
+        {
+            Contador = _reclamacaoRepository.GetAll().Count;
+        }
+        #endregion
     }
 }

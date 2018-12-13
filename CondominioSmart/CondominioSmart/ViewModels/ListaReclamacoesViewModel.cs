@@ -14,9 +14,9 @@ namespace CondominioSmart.ViewModels
         #region Propriedade
         private readonly IReclamacaoRepository _reclamacaoRepository;
 
-        private ObservableCollection<Reclamacao> _listaReclamacao;
+        private ObservableCollection<Teste> _listaReclamacao;
 
-        public ObservableCollection<Reclamacao> ListaReclamacao
+        public ObservableCollection<Teste> ListaReclamacao
         {
             get { return _listaReclamacao; }
             set { SetProperty(ref _listaReclamacao, value); }
@@ -25,14 +25,13 @@ namespace CondominioSmart.ViewModels
 
         #region Commands
         public ICommand DetalheCommand { get { return new Command<Reclamacao>(OnDetalheExecute); } }
-
         #endregion
 
         #region Construtor
         public ListaReclamacoesViewModel()
         {
             _reclamacaoRepository = new ReclamacaoRepository();
-            ListaReclamacao = new ObservableCollection<Reclamacao>(List());
+            ListaReclamacao = new ObservableCollection<Teste>();
             AdicionarLista();
         }
         #endregion
@@ -40,17 +39,22 @@ namespace CondominioSmart.ViewModels
         #region Métodos
         private void AdicionarLista()
         {
-            MessagingCenter.Subscribe<Reclamacao>(this, "Confirmacao", message =>
+            MessagingCenter.Subscribe<Teste>(this, "Confirmacao", message =>
             {
-                _reclamacaoRepository.Insert(message);
-
+                // _reclamacaoRepository.Insert(message);
+                ListaReclamacao.Add(message);
             });
         }
 
-        private List<Reclamacao> List()
-        {
-            return _reclamacaoRepository.GetAll();
-        }
+        //private List<Reclamacao> List()
+        //{
+        //    //return _reclamacaoRepository.GetAll();
+        //}
+
+        //private void Init()
+        //{
+        //    ListaReclamacao = new ObservableCollection<Reclamacao>(List());
+        //}
         #endregion
 
         private async void OnDetalheExecute(Reclamacao reclamacao)
