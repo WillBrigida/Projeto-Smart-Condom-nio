@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 
 namespace CondominioSmart.ViewModels
@@ -9,7 +10,28 @@ namespace CondominioSmart.ViewModels
     public class ListaMoradoresViewModel : BaseViewModel
     {
         #region Propriedade
-        public ObservableCollection<CondominosFakes> ListaCondominos { get; set; }
+        private string filtro;
+
+        public string Filtro
+        {
+            get { return filtro; }
+            set
+            {
+                this.SetProperty(ref filtro, value);
+                Search();
+            }
+
+        }
+
+        private ObservableCollection<CondominosFakes> _listaCondominos;
+
+        public ObservableCollection<CondominosFakes> ListaCondominos
+        {
+            get { return _listaCondominos; }
+            set {SetProperty(ref _listaCondominos , value); }
+        }
+
+        public ObservableCollection<CondominosFakes> _listaCondominosFiltrada { get; set; }
 
         #endregion
 
@@ -17,6 +39,7 @@ namespace CondominioSmart.ViewModels
         public ListaMoradoresViewModel()
         {
             ListaCondominos = new ObservableCollection<CondominosFakes>(Lista());
+            _listaCondominosFiltrada = new ObservableCollection<CondominosFakes>(Lista());
         }
         #endregion
 
@@ -82,6 +105,20 @@ namespace CondominioSmart.ViewModels
                 #endregion
             };
             return lista;
+        }
+
+        private void Search()
+        {
+            if (string.IsNullOrEmpty(Filtro))
+            {
+                ListaCondominos = new ObservableCollection<CondominosFakes>(_listaCondominosFiltrada);
+            }
+            else
+            {
+                ListaCondominos = new ObservableCollection<CondominosFakes>
+                     (_listaCondominosFiltrada.Where(p => p.Nome.ToLower().Contains(Filtro.ToLower()) ||
+                      p.Apartamento.ToLower().Contains(Filtro.ToLower())));
+            }
         }
         #endregion
     }

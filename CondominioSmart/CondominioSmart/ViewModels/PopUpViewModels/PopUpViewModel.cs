@@ -31,6 +31,7 @@ namespace CondominioSmart.ViewModels.PopUpViewModels
 
         private async void OnBackPopUpExecute()
         {
+            await PopupNavigation.PopAsync();
         }
 
         #endregion

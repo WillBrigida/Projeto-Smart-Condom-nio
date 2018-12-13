@@ -32,6 +32,7 @@ namespace CondominioSmart.ViewModels
         public ICommand AtendimentosCommand { get { return new Command(OnAtendimentosCommandExecute); } }
         public ICommand ScannerCommand { get { return new Command(OnScannerCommandExecute); } }
         public ICommand BuscaCommand { get { return new Command(OnBuscaExecute); } }
+        public ICommand PopsCommand { get { return new Command(OnPopsExecute); } }
 
         #endregion
 
@@ -76,6 +77,12 @@ namespace CondominioSmart.ViewModels
         private async void OnBuscaExecute(object obj)
         {
             await Navigation.PushAsync<ListaBuscaViewModel>(false);
+        }
+
+
+        private async void OnPopsExecute(object obj)
+        {
+            await Navigation.PushAsync<PopsViewModel>(false);
         }
 
 

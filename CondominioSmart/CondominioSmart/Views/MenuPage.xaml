@@ -5,8 +5,8 @@
     x:Class="CondominioSmart.Views.MenuPage"
      Title="Menu">
 
-   
 
+   
 
 
     <StackLayout>
@@ -39,6 +39,11 @@
         <Button
             Command="{Binding BuscaCommand}"
             Text="Busca">
+        </Button>
+
+        <Button
+            Command="{Binding PopsCommand}"
+            Text="Pops">
         </Button>
 
         <Entry

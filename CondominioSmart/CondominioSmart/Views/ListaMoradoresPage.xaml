@@ -3,19 +3,30 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CondominioSmart.Views.ListaMoradoresPage"
+    xmlns:controls="clr-namespace:CondominioSmart.Controls"
     Title="Moradores">
 
-
+    <NavigationPage.TitleView>
+        <StackLayout>
+           
+            <controls:CustomEntry
+                Text="{Binding Filtro,  Mode=TwoWay }"
+                Placeholder="  Busca" 
+                HeightRequest="40"
+                Margin="0,0,40,0" />
+            
+        </StackLayout>
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <StackLayout>
             <ListView
+                SelectionMode="None"
                 CachingStrategy ="RecycleElement"
                 SelectedItem="false"
-                SeparatorVisibility="Default"
+                SeparatorVisibility="None"
                 HasUnevenRows="True"  
                 IsVisible="True"
-                BackgroundColor="White"
                 ItemsSource="{Binding ListaCondominos}">
                 
                 <!-- HasUnevenRows  true - tamanho de acordo com a quantidade. false - um linha apenas-->
@@ -23,6 +34,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <Frame
+                                Margin="5">
                             <StackLayout
                                 Margin="10">
                                 <Label
@@ -40,6 +53,7 @@
                                     Text="{Binding Telefone }">
                                 </Label>
                             </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
