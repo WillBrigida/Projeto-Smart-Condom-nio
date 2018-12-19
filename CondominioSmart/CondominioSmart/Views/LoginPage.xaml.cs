@@ -13,18 +13,23 @@ namespace CondominioSmart.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
 	{
-        private LoginViewModel ViewModel => BindingContext as LoginViewModel;
+        //private LoginViewModel ViewModel => BindingContext as LoginViewModel;
 
         public LoginPage ()
 		{
 			InitializeComponent ();
             this.BindingContext = new LoginViewModel();
-		}
-
-         protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            await ViewModel.LoadAsync();
         }
-	}
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+
+        // protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    await ViewModel.LoadAsync();
+        //}
+    }
 }

@@ -50,7 +50,12 @@ namespace CondominioSmart.ViewModels
         {
             if (!String.IsNullOrWhiteSpace(TitleReclamacao))
             {
-                MessagingCenter.Send(new Teste {  Mensagem = "Teste"}, "Confirmacao");
+                MessagingCenter.Send(new Reclamacao {TextReclamacao = this.TextReclamacao, TitleReclamacao = this.TitleReclamacao}, "Confirmacao");
+                //Ao ser chamado, dispara a ação de quem estiver ouvindo, validado pela assinatura que neste 
+                //caso é a string "confirmacao"
+                var reclamacao = new Reclamacao()
+                { TextReclamacao = this.TextReclamacao, TitleReclamacao = this.TitleReclamacao };
+                _reclamacaoRepository.Insert(reclamacao);
             }
         }
         #endregion

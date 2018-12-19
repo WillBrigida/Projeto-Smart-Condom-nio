@@ -45,7 +45,7 @@ namespace CondominioSmart.Droid.Renderers
             GradientDrawable gd = new GradientDrawable();
             gd.SetColor(Android.Graphics.Color.White);
             gd.SetCornerRadius(10);
-            gd.SetStroke(4, Android.Graphics.Color.LightGray);
+            gd.SetStroke(2, Android.Graphics.Color.LightGray);
             Control.SetBackground(gd);
         }
     }

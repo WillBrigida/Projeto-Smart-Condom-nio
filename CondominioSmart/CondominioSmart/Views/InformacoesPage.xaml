@@ -16,6 +16,21 @@
                 Text="Moradores">
             </Button>
 
+            <Label Text="&#xf008;" 
+                   FontSize="100"
+                   VerticalTextAlignment="Center"
+                   Style="{StaticResource MainMenuIconsStyle}"/>
+
+            <Label Text="&#xf008;" FontSize="36" HorizontalTextAlignment="Center">
+
+                <Label.FontFamily>
+
+                    <OnPlatform x:TypeArguments="x:String" Android="fa-solid-900.ttf#Font Awesome 5 Free Regular" />
+
+                </Label.FontFamily>
+
+            </Label>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CondominioSmart.Views;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
@@ -9,6 +10,15 @@ namespace CondominioSmart.ViewModels
     public class InformacoesViewModel : BaseViewModel
     {
         #region Propriedade
+        Helpers.FontAwesome fontAwesome;
+
+        private string _icon;
+
+        public string Icon
+        {
+            get { return _icon; }
+            set {SetProperty(ref _icon , value); }
+        }
 
         #endregion
 
@@ -20,7 +30,8 @@ namespace CondominioSmart.ViewModels
         #region Construtor
         public InformacoesViewModel()
         {
-
+            fontAwesome = new Helpers.FontAwesome();
+            Icon = Helpers.FontAwesome.Film;
         }
         #endregion
 
@@ -28,8 +39,13 @@ namespace CondominioSmart.ViewModels
 
         private async void OnMoradoresExecute(object obj)
         {
-            await Navigation.PushAsync<ListaMoradoresViewModel>(false);
+            var mdp = (Application.Current.MainPage as MasterDetailPage);
+            var navPage = mdp.Detail as NavigationPage;
+            //await Navigation.PushAsync<ListaMoradoresViewModel>(false);
+            await navPage.PushAsync(new ListaMoradoresPage());
         }
+
+
         #endregion
     }
 }

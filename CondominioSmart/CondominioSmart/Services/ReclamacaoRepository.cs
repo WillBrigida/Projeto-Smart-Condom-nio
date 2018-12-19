@@ -50,7 +50,8 @@ namespace CondominioSmart.Services
 
             reclamacao.ReclamacaoId = maxNotaId + 1;
 
-            RealmDb.Write(() => reclamacao = RealmDb.Add(reclamacao));
+            RealmDb.Write(() => 
+            reclamacao = RealmDb.Add(reclamacao));
         }
 
         public void UpDate(Reclamacao reclamacao)

@@ -14,9 +14,9 @@ namespace CondominioSmart.ViewModels
         #region Propriedade
         private readonly IReclamacaoRepository _reclamacaoRepository;
 
-        private ObservableCollection<Teste> _listaReclamacao;
+        private ObservableCollection<Reclamacao> _listaReclamacao;
 
-        public ObservableCollection<Teste> ListaReclamacao
+        public ObservableCollection<Reclamacao> ListaReclamacao
         {
             get { return _listaReclamacao; }
             set { SetProperty(ref _listaReclamacao, value); }
@@ -31,39 +31,35 @@ namespace CondominioSmart.ViewModels
         public ListaReclamacoesViewModel()
         {
             _reclamacaoRepository = new ReclamacaoRepository();
-            ListaReclamacao = new ObservableCollection<Teste>();
             AdicionarLista();
+            Init();
         }
         #endregion
 
         #region Métodos
         private void AdicionarLista()
         {
-            MessagingCenter.Subscribe<Teste>(this, "Confirmacao", message =>
+            MessagingCenter.Subscribe<Reclamacao>(this, "Confirmacao", message =>
             {
-                // _reclamacaoRepository.Insert(message);
-                ListaReclamacao.Add(message);
+                Init();
             });
         }
 
-        //private List<Reclamacao> List()
-        //{
-        //    //return _reclamacaoRepository.GetAll();
-        //}
+        private List<Reclamacao> List()
+        {
+            return _reclamacaoRepository.GetAll();
+        }
 
-        //private void Init()
-        //{
-        //    ListaReclamacao = new ObservableCollection<Reclamacao>(List());
-        //}
+        private void Init()
+        {
+            ListaReclamacao = new ObservableCollection<Reclamacao>(List());
+        }
         #endregion
 
         private async void OnDetalheExecute(Reclamacao reclamacao)
         {
             await Navigation.PushAsync<DetalheViewModel>(false, reclamacao);
         }
-
-
-
     }
 }
 

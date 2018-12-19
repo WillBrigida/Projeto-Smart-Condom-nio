@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -37,7 +38,15 @@ namespace CondominioSmart.ViewModels
 
         private async void OnLoginCommandExecute(object obj)
         {
-            await Navigation.PushAsync<MenuViewModel>(false);
+            var mdp = (Application.Current.MainPage as MasterDetailPage);
+            var navPage = mdp.Detail as NavigationPage;
+            IsRunning = true;
+            await Task.Delay(5000);
+
+           
+            await App.Current.MainPage.Navigation.PopModalAsync();
+            IsRunning = false;
+
         }
 
         #endregion

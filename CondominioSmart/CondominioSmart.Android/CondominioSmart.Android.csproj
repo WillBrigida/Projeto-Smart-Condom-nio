@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+  <SkipValidatePackageReferences>true</SkipValidatePackageReferences>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{90BA4FD6-15C3-482A-A176-CB31656C820D}</ProjectGuid>
@@ -52,11 +53,35 @@
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
       <Version>2.5.4</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Bcl">
+      <Version>1.1.10</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Bcl.Build">
+      <Version>1.0.21</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Net.Http">
+      <Version>2.2.29</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Realm">
       <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>1.1.4.168</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Iconize">
+      <Version>3.4.0.103</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Iconize.FontAwesome">
+      <Version>3.4.0.103</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Iconize.Material">
+      <Version>3.4.0.103</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.0.0.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.8055-pre1" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
@@ -78,6 +103,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Rederers\CustomEditorRenderer.cs" />
     <Compile Include="Rederers\CustomEntryRenderer.cs" />
+    <Compile Include="Rederers\CustomPickerRender.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\MessageService.cs" />
@@ -85,6 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\check.json" />
+    <AndroidAsset Include="Assets\fa-solid-900.ttf" />
+    <AndroidAsset Include="Assets\fa-brands-400.ttf" />
+    <AndroidAsset Include="Assets\fa-regular-400.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -130,6 +159,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\slideout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

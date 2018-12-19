@@ -8,7 +8,27 @@
     <Application.Resources>
         <ResourceDictionary>
             <infra:InstanceLocator x:Key="Locator" />
+
+            <OnPlatform  x:Key="IconFontFamily" x:TypeArguments="x:String" Android="fa-solid-900.ttf#Font Awesome 5 Free Regular" />
+            
+            <!--<OnPlatform x:Key="IconFontFamily" x:TypeArguments="x:String">
+                <On Platform="Android">fa-solid-900.ttf#Font Awesome 5 Free Regular</On>
+            </OnPlatform>-->
+
+            <Style x:Key="MainMenuIconsStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray"/>
+                <Setter Property="FontFamily" Value="{DynamicResource IconFontFamily}"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+
+            </Style>
+
+           
         </ResourceDictionary>
+        
+        
+        
+        
     </Application.Resources>
     
 </Application>

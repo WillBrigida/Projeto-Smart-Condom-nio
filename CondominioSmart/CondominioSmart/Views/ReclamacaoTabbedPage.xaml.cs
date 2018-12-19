@@ -7,18 +7,18 @@ namespace CondominioSmart.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReclamacaoTabbedPage : TabbedPage
     {
-        private ReclamacaoTabbedViewModel ViewModel => BindingContext as ReclamacaoTabbedViewModel;
+        //private ReclamacaoTabbedViewModel ViewModel => BindingContext as ReclamacaoTabbedViewModel;
 
-        public ReclamacaoTabbedPage ()
+        public ReclamacaoTabbedPage()
         {
             InitializeComponent();
-            //this.BindingContext = new ReclamacaoTabbedViewModel();
+            this.BindingContext = new ReclamacaoTabbedViewModel();
         }
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            await ViewModel.LoadAsync();
-        }
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    await ViewModel.LoadAsync();
+        //}
     }
 }

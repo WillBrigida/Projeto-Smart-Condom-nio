@@ -9,15 +9,37 @@
         <StackLayout
         Margin="20">
 
-            <Picker
-                Title=" Reclamações">
-            </Picker>
-
-
-
+         
             <DatePicker>
-
             </DatePicker>
+            
+            
+            <controls:CustomPicker
+                Title="Teste">
+                <Picker.Items>
+                    <x:String>jhghjgl</x:String>
+                    <x:String>kgjhjhghj</x:String>
+                    <x:String>jhghjgl</x:String>
+                    <x:String>jhghjgl</x:String>
+                    <x:String>jhghjgl</x:String>
+                    <x:String>jhghjgl</x:String>
+                    <x:String>jhghjgl</x:String>
+                    <x:String>kgjhjhghj</x:String>
+                    <x:String>kgjhjhghj</x:String>
+                    <x:String>kgjhjhghj</x:String>
+                    <x:String>kgjhjhghj</x:String>
+                    <x:String>kgjhjhghj</x:String>
+                </Picker.Items>
+
+            </controls:CustomPicker>
+
+            <Picker>
+                <Picker.Items>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                </Picker.Items>
+               
+            </Picker>
 
 
             <controls:CustomEntry

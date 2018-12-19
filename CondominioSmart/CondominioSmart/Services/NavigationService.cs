@@ -38,12 +38,21 @@ namespace CondominioSmart.Services
 
         public async Task PushAsync<TViewModel>(bool modal = false, params object[] args) where TViewModel : BaseViewModel
         {
+            //var mdp = (Application.Current.MainPage as MasterDetailPage);
+            //var navPage = mdp.Detail as NavigationPage;
+
             var page = GetViewModelLocator<TViewModel>(args);
 
             if (modal)
                 await Application.Current.MainPage.Navigation.PushModalAsync(page);
             else
-                await Application.Current.MainPage.Navigation.PushAsync(page);
+                await Application.Current.MainPage.Navigation.PushAsync(page) ;
+
+            
+            //await navPage.PushAsync(page);
+            //await Navigation.PushAsync<ReclamacaoTabbedViewModel>(false);
+
+
 
 
             await (page.BindingContext as BaseViewModel).LoadAsync(args);

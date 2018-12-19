@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CondominioSmart.Views.LoginPage"
-    BackgroundColor="#2a81d2"
+    xmlns:controls="clr-namespace:CondominioSmart.Controls"
+    BackgroundColor="White"
     NavigationPage.HasNavigationBar="False">
     
     
@@ -15,7 +16,7 @@
             RowSpacing="25">
             
             <Grid.RowDefinitions>
-                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -36,37 +37,53 @@
                     VerticalOptions="EndAndExpand"
                     HorizontalOptions="FillAndExpand">
 
-                    <Entry
+                    <controls:CustomEntry
+                        Margin="30,0"
                             VerticalOptions="Center"
                             Keyboard="Email"
                             Placeholder=" Login"
-                        BackgroundColor="White"
                             TextColor="Black"/>
 
 
 
-                    <Entry
-                        
-                            VerticalOptions="Center"
+                <controls:CustomEntry
+                    Margin="30,0"
                             IsPassword="True"
-                        BackgroundColor="White"
-                        
                             Placeholder=" Senha"
                             TextColor="Black"/>
+                <StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    
+                <Switch
+                    Margin="20,0"
+                    Grid.Column="0"
+                    HorizontalOptions="StartAndExpand">
+                </Switch>
+
+                        <Label
+                            HorizontalOptions="Start"
+                            Grid.Column="1"
+                            Text="Lembrar a senha">
+                            
+                        </Label>
+                    </Grid>
+                </StackLayout>
 
 
-
-        <Button 
-                        
-                        Text="ok"
+                <Button 
+                        Text="entrar"
                         FontSize="14"
-                        BackgroundColor="White"
-                        WidthRequest="87"
-                        HeightRequest="42"
-                        TextColor="OrangeRed"
+                        BackgroundColor="#49a4aa"
+                        CornerRadius="40"
+                        WidthRequest="200"
+                        HeightRequest="55"
+                        TextColor="White"
                         FontAttributes="Bold"
-                        HorizontalOptions="End"
-                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
                         Command="{Binding LoginCommand}"  />
 
 

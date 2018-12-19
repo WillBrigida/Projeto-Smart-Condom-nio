@@ -1,56 +1,203 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
+<MasterDetailPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="CondominioSmart.Views.MenuPage"
-     Title="Menu">
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"	  
+    xmlns:iconize="clr-namespace:Plugin.Iconize.Fonts;assembly=Plugin.Iconize.Material"
+    
+    x:Class="CondominioSmart.Views.MenuPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" Padding="0">
+            <ContentPage.Content>
+
+                <StackLayout>
+                    <Grid BackgroundColor="Transparent" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"/>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Image Source="bg" Aspect="AspectFill" />
+                        <StackLayout 
+                            Padding="0,20,0,0" 
+                            HorizontalOptions="CenterAndExpand" 
+                            VerticalOptions="CenterAndExpand">
+                            <controls:CircleImage 
+                                BorderColor="White" BorderThickness="2" 
+                                Source="logo.png" Aspect="AspectFill" 
+                                WidthRequest="85" HeightRequest="85" />
+                            <Label Text="Will Brigida" 
+                                   TextColor="White" 
+                                   FontSize="Large" />
+
+                        </StackLayout>
+                    </Grid>
 
 
-   
+
+                    <TableView 
+                        VerticalOptions="CenterAndExpand"
+                        HasUnevenRows="False"
+                        Intent="Menu">
 
 
-    <StackLayout>
+                        <TableSection>
 
-        <Button
-            Command="{Binding InformacoesCommand}"
-            Text="Informações">
-        </Button>
+           <!--///////////////////////////////////////////////////////////////////////////////////////-->
 
-        <Button
-            Command="{Binding ReclamacoesCommand}"
-            Text="Reclamações">
-        </Button>
+                            <ViewCell
+                                Tapped="GoPage1">
+                                <StackLayout 
+                                       
+                                    Padding="15,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label 
+                                            TextColor="Gray"
+                                                Grid.Column="1"
+                                        Text="Reclamações" 
+                                        VerticalTextAlignment="Center"
+                                        FontSize="Medium"/>
 
-        <Button
-            Command="{Binding AtendimentosCommand}"
-            Text="Atendimento">
-        </Button>
+                                        <Label Text="&#xf011;" 
+                                                Grid.Column="0"
+                                       VerticalTextAlignment="Center"
+                                       Style="{StaticResource MainMenuIconsStyle}"/>
 
-        <Button
-            Command="{Binding PortariaCommand}"
-            Text="Portaria">
-        </Button>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                            <!--///////////////////////////////////////////////////////////////////////////////////////-->
 
-        <Button
-            Command="{Binding ScannerCommand}"
-            Text="Scanner">
-        </Button>
+                            <ViewCell
+                                Tapped="GoPage2">
+                                <StackLayout 
+                                       
+                                    Padding="15,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label 
+                                                Grid.Column="1"
+                                        Text="Informacoes" 
+                                        VerticalTextAlignment="Center"
+                                        FontSize="Medium"/>
 
-        <Button
-            Command="{Binding BuscaCommand}"
-            Text="Busca">
-        </Button>
+                                        <Label Text="&#xf05a;" 
+                                                Grid.Column="0"
+                                                   
+                                       VerticalTextAlignment="Center"
+                                       Style="{StaticResource MainMenuIconsStyle}"/>
 
-        <Button
-            Command="{Binding PopsCommand}"
-            Text="Pops">
-        </Button>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
 
-        <Entry
-            Text="{Binding Entry}">
-            
-        </Entry>
+                            <!--///////////////////////////////////////////////////////////////////////////////////////-->
 
-    </StackLayout>
 
-</ContentPage>
+                           
+                            
+                            <ViewCell
+                                Tapped="GoPage3">
+                                <StackLayout 
+                                       
+                                    Padding="15,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label 
+                                                Grid.Column="1"
+                                        Text="Pops" 
+                                        VerticalTextAlignment="Center"
+                                        FontSize="Medium"/>
+
+                                        <Label Text="&#xf009;" 
+                                                Grid.Column="0"
+                                                   
+                                       VerticalTextAlignment="Center"
+                                       Style="{StaticResource MainMenuIconsStyle}"/>
+
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                            <!--///////////////////////////////////////////////////////////////////////////////////////-->
+
+
+
+                            <ViewCell
+                                Tapped="GoPage4">
+                                <StackLayout 
+                                       
+                                    Padding="15,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label 
+                                                Grid.Column="1"
+                                        Text="Atendimento" 
+                                        VerticalTextAlignment="Center"
+                                        FontSize="Medium"/>
+
+                                        <Label Text="&#xf6f1;" 
+                                                Grid.Column="0"
+                                                   
+                                       VerticalTextAlignment="Center"
+                                       Style="{StaticResource MainMenuIconsStyle}"/>
+
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+
+                            <!--///////////////////////////////////////////////////////////////////////////////////////-->
+
+
+                            <ViewCell
+                                Tapped="GoPage5">
+                                <StackLayout 
+                                       
+                                    Padding="15,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label 
+                                                Grid.Column="1"
+                                        Text="Scanner" 
+                                        VerticalTextAlignment="Center"
+                                        FontSize="Medium"/>
+
+                                        <Label Text="&#xf02a;" 
+                                                Grid.Column="0"
+                                                   
+                                       VerticalTextAlignment="Center"
+                                       Style="{StaticResource MainMenuIconsStyle}"/>
+
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+
+
+                          
+
+
+                        </TableSection>
+
+                    </TableView>
+
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>

@@ -13,17 +13,18 @@ namespace CondominioSmart.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopsPage : ContentPage
     {
-        PopsViewModel ViewModel => BindingContext as PopsViewModel;
+       // PopsViewModel ViewModel => BindingContext as PopsViewModel;
 
         public PopsPage()
         {
             InitializeComponent();
+            BindingContext = new PopsViewModel();
         }
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            await ViewModel.LoadAsync();
-        }
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    await ViewModel.LoadAsync();
+        //}
     }
 }

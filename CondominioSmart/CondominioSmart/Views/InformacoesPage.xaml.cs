@@ -13,17 +13,18 @@ namespace CondominioSmart.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class InformacoesPage : ContentPage
 	{
-        private InformacoesViewModel ViewModel => BindingContext as InformacoesViewModel;
+        //private InformacoesViewModel ViewModel => BindingContext as InformacoesViewModel;
 
         public InformacoesPage ()
 		{
 			InitializeComponent ();
-		}
-
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            await ViewModel.LoadAsync();
+            BindingContext = new  InformacoesViewModel();
         }
+
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    await ViewModel.LoadAsync();
+        //}
     }
 }

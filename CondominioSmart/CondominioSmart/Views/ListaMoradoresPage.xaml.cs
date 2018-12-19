@@ -13,17 +13,19 @@ namespace CondominioSmart.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ListaMoradoresPage : ContentPage
 	{
-        ListaMoradoresViewModel ViewModel => BindingContext as ListaMoradoresViewModel;
+        //ListaMoradoresViewModel ViewModel => BindingContext as ListaMoradoresViewModel;
 
         public ListaMoradoresPage ()
 		{
 			InitializeComponent ();
-		}
+            BindingContext = new ListaMoradoresViewModel();
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            await ViewModel.LoadAsync();
         }
+
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    await ViewModel.LoadAsync();
+        //}
     }
 }

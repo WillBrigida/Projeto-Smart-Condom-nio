@@ -22,7 +22,13 @@ namespace CondominioSmart
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new  MenuPage();
+
+            //MainPage = new MasterDetailPage()
+            //{
+            //    Master = new MasterPage() { Title = "Main Page" },
+            //    Detail = new NavigationPage(new PortariaPage())
+            //};
         }
 
         protected override void OnStart()

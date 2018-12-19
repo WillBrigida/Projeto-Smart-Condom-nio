@@ -26,8 +26,9 @@
                 SelectedItem="false"
                 SeparatorVisibility="None"
                 HasUnevenRows="True"  
+                IsRefreshing="{Binding IsRunning}"
                 IsVisible="True"
-                ItemsSource="{Binding ListaCondominos}">
+                ItemsSource="{Binding ListaMoradores}">
                 
                 <!-- HasUnevenRows  true - tamanho de acordo com a quantidade. false - um linha apenas-->
                 
@@ -35,22 +36,23 @@
                     <DataTemplate>
                         <ViewCell>
                             <Frame
+                                BackgroundColor="White"
                                 Margin="5">
                             <StackLayout
                                 Margin="10">
                                 <Label
-                                    Text="{Binding Nome }"
+                                    Text="{Binding NomeMorador }"
                                     FontAttributes="Bold"
                                     FontSize="Medium">
                                 </Label>
                                 <Label
-                                    Text="{Binding SobreNome }">
+                                    Text="{Binding Sescricao }">
                                 </Label>
                                 <Label
-                                    Text="{Binding Apartamento }">
+                                    Text="{Binding ApartamentoMorador }">
                                 </Label>
                                 <Label
-                                    Text="{Binding Telefone }">
+                                    Text="{Binding TelefoneMorador }">
                                 </Label>
                             </StackLayout>
                             </Frame>

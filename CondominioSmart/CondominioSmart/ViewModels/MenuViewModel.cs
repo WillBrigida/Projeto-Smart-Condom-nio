@@ -46,7 +46,10 @@ namespace CondominioSmart.ViewModels
 
         private async void OnReclamacoesCommandExecute(object obj)
         {
-            await Navigation.PushAsync<ReclamacaoTabbedViewModel>(false);
+            //var mdp = (Application.Current.MainPage as MasterDetailPage);
+            //var navPage = mdp.Detail as NavigationPage;
+            //await navPage.PushAsync(new ReclamacaoTabbedPage());
+            await Navigation.PushAsync<ReclamacoesViewModel>(false);
         }
 
 

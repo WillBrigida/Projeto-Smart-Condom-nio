@@ -4,8 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CondominioSmart.Views.ListaReclamacoesPage"
 >
+    <!--ItemSelected="Handle_ItemSelected"-->
 
-   
+
     <ContentPage.Content>
         <StackLayout>
 
@@ -13,16 +14,22 @@
                 CachingStrategy ="RecycleElement"
                 SelectedItem="false"
                 SeparatorVisibility="Default"
-                HasUnevenRows="False"
+                HasUnevenRows="True"
                 IsVisible="True"
-                ItemSelected="Handle_ItemSelected"
                 ItemsSource="{Binding ListaReclamacao}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
                                 <Label
+                                    FontAttributes="Bold"
+                                    Text="{Binding ReclamacaoId }">
+                                </Label>
+                                <Label
                                     Text="{Binding TitleReclamacao }">
+                                </Label>
+                                <Label
+                                    Text="{Binding TextReclamacao }">
                                 </Label>
                             </StackLayout>
                         </ViewCell>

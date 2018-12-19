@@ -17,8 +17,14 @@ namespace CondominioSmart.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            
+
+
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
+            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.MaterialModule());
+
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             LoadApplication(new App());

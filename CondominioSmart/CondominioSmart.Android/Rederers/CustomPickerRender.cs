@@ -11,42 +11,46 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using CondominioSmart.Controls;
-using CondominioSmart.Droid.Renderers;
+using CondominioSmart.Droid.Rederers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
-namespace CondominioSmart.Droid.Renderers
+[assembly: ExportRenderer(typeof(CustomPicker), typeof(CustomPickerRender))]
+namespace CondominioSmart.Droid.Rederers
 {
-    public class CustomEntryRenderer : EntryRenderer
+    class CustomPickerRender : PickerRenderer
     {
-        public CustomEntryRenderer(Context context) : base(context)
+        public CustomPickerRender(Context context) : base(context)
         {
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Picker> e)
         {
             base.OnElementChanged(e);
 
             if (Control != null && e.NewElement != null)
+
             {
-                BorderLessBotton();
-                BorderEntry();
+    
+                //BorderLessBotton();
+                BorderEditor();
+
             }
         }
 
         private void BorderLessBotton()
         {
-            Control.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
+            Control.Background = new ColorDrawable(Android.Graphics.Color.Blue);
         }
 
-        private void BorderEntry()
+        private void BorderEditor()
         {
             GradientDrawable gd = new GradientDrawable();
-            gd.SetColor(Android.Graphics.Color.WhiteSmoke);
+            gd.SetColor(Android.Graphics.Color.White);
             gd.SetCornerRadius(10);
-            gd.SetStroke(2, Android.Graphics.Color.WhiteSmoke);
+            gd.SetStroke(2, Android.Graphics.Color.LightGray);
             Control.SetBackground(gd);
         }
+
     }
 }

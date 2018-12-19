@@ -10,20 +10,27 @@ using Xamarin.Forms.Xaml;
 
 namespace CondominioSmart.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PortariaPage : ContentPage
-	{
-        private PortariaViewModel ViewModel => BindingContext as PortariaViewModel;
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PortariaPage : ContentPage
+    {
+        // private PortariaViewModel ViewModel => BindingContext as PortariaViewModel;
 
-        public PortariaPage ()
-		{
-			InitializeComponent ();
-		}
-
-        protected override async void OnAppearing()
+        public PortariaPage()
         {
-            base.OnAppearing();
-            await ViewModel.LoadAsync();
+            InitializeComponent();
+            BindingContext = new PortariaViewModel();
+
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    await ViewModel.LoadAsync();
+        //}
     }
 }

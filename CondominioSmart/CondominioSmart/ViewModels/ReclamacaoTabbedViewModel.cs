@@ -30,6 +30,7 @@ namespace CondominioSmart.ViewModels
         public ReclamacaoTabbedViewModel()
         {
             _reclamacaoRepository = new ReclamacaoRepository();
+            MudarContador();
             Init();
         }
         #endregion
