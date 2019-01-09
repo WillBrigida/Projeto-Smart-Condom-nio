@@ -18,7 +18,7 @@ namespace CondominioSmart.Services
 
         public void Delete(Reclamacao reclamacao)
         {
-            var reclamacaoData = RealmDb.Find<Reclamacao>(reclamacao.ReclamacaoId);
+            var reclamacaoData = RealmDb.Find<Reclamacao>(reclamacao.ID);
 
             RealmDb.Write(() => RealmDb.Remove(reclamacaoData));
         }
@@ -45,10 +45,10 @@ namespace CondominioSmart.Services
 
             if (reclamacoes.Count != 0)
             {
-                maxNotaId = reclamacoes.Max(r => r.ReclamacaoId);
+                maxNotaId = reclamacoes.Max(r => r.ID);
             }
 
-            reclamacao.ReclamacaoId = maxNotaId + 1;
+            reclamacao.ID = maxNotaId + 1;
 
             RealmDb.Write(() => 
             reclamacao = RealmDb.Add(reclamacao));
@@ -56,7 +56,7 @@ namespace CondominioSmart.Services
 
         public void UpDate(Reclamacao reclamacao)
         {
-            var reclamacaoData = RealmDb.Find<Reclamacao>(reclamacao.ReclamacaoId);
+            var reclamacaoData = RealmDb.Find<Reclamacao>(reclamacao.ID);
 
             RealmDb.Write(() =>
             {

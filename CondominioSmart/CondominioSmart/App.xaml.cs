@@ -10,13 +10,16 @@ namespace CondominioSmart
 {
     public partial class App : Application
     {
+        public static MenuPage _menu { get; internal set; }
+
         public App()
         {
+
             //DependencyService.Register<INavigationService, NavigationService>();
             DependencyService.Register<IMessegeService, MessegeService>();
 
             //Versionamento do esquema do RealmDB
-            //Realms.RealmConfiguration.DefaultConfiguration.SchemaVersion = 1;
+            Realms.RealmConfiguration.DefaultConfiguration.SchemaVersion = 3;
 
             LiveReload.Init();
 

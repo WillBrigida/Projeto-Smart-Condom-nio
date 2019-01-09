@@ -10,7 +10,7 @@ namespace CondominioSmart.Helpers
         public const int IconMin = 0xf000;
         public const int IconMax = 0xf2e0;
         public const string Glass = "\uf000";
-        public const string Music = "\uf001";
+        public const string Musica = "\uf001";
         public const string Search = "\uf002";
         public const string EnvelopeO = "\uf003";
         public const string Heart = "\uf004";

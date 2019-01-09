@@ -6,29 +6,38 @@
     xmlns:controls="clr-namespace:CondominioSmart.Controls"
     BackgroundColor="White"
     NavigationPage.HasNavigationBar="False">
-    
-    
 
-    <StackLayout
-        VerticalOptions="FillAndExpand">
 
-        <Grid
+    <AbsoluteLayout>
+        
+        <Image 
+            IsVisible="{Binding IsVisible2}"
+            x:Name="Logo" 
+            AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds=".5,.5,.6,.6"
+            Source="logo.png"/>
+
+
+        <StackLayout
+            IsVisible="{Binding Teste}">
+        
+            <Grid
             RowSpacing="25">
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40" />
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
 
                 <Image
                     Grid.Row="1"
+                    Source="logo"
                     HeightRequest="40"
-                    WidthRequest="40"
-                    Source="logo.png">
-                </Image>
+                    WidthRequest="40"/>
 
-              
+
 
                 <StackLayout
                     Grid.Row="2"
@@ -46,41 +55,45 @@
 
 
 
-                <controls:CustomEntry
+                    <controls:CustomEntry
                     Margin="30,0"
                             IsPassword="True"
                             Placeholder=" Senha"
                             TextColor="Black"/>
-                <StackLayout>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                    
-                <Switch
-                    Margin="20,0"
-                    Grid.Column="0"
-                    HorizontalOptions="StartAndExpand">
-                </Switch>
+                    <StackLayout>
+                        <Grid
+                        ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2.2*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Label
-                            HorizontalOptions="Start"
+                            <Switch
+                                OnColor="Orange"
+                            Margin="20,0"
+                            Grid.Column="0"
+                            HorizontalOptions="Center">
+                            </Switch>
+
+                            <Label
+                            VerticalOptions="Center"
+                            Font="MarkerFelt-Thin"
+                            HorizontalOptions="StartAndExpand"
                             Grid.Column="1"
-                            Text="Lembrar a senha">
-                            
-                        </Label>
-                    </Grid>
-                </StackLayout>
+                            Text="Lembrar minha senha"/>
 
 
-                <Button 
+                        </Grid>
+                    </StackLayout>
+
+
+                    <Button 
                         Text="entrar"
                         FontSize="14"
                         BackgroundColor="#49a4aa"
-                        CornerRadius="40"
-                        WidthRequest="200"
-                        HeightRequest="55"
+                        CornerRadius="21"
+                        Padding="50,0"
+                        HeightRequest="42"
                         TextColor="White"
                         FontAttributes="Bold"
                         HorizontalOptions="Center"
@@ -89,25 +102,52 @@
 
 
                     <ActivityIndicator
-                        Margin="0,-50,26,0"
-                        HorizontalOptions="End"
-                        Color="OrangeRed"
-                        HeightRequest="30"
-                        WidthRequest="30"
+                        Margin="110,-48,0,0"
+                        HorizontalOptions="Center"
+                        Color="White"
+                        HeightRequest="25"
                         IsRunning="{Binding IsRunning}"/>
 
-                   
+                    <Label
+                    Style="{StaticResource MainMenuIconsStyle}"
+                    TextColor="Orange"
+                    Margin="0,20"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Text="Seja bem vindo à sua &#xf015; mobile!"/>
+
                 </StackLayout>
             </Grid>
 
 
-           
+        <!--<Grid IsVisible="{Binding IsVisible}"
+            Margin="0,-1,0,0"
+            VerticalOptions="FillAndExpand">
 
-        </StackLayout>
-   
+            <Label Text="Welcome to Xamarin Forms!" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+            
+            
 
 
+            <Grid x:Name="SplashGrid" 
+                  BackgroundColor="{StaticResource Primary}">
+                <Image
+                    x:Name="Logo" 
+                    Source="logo" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center">
+                    <Image.TranslationY>
+                        <OnPlatform x:TypeArguments="x:Double">
 
-   
+                            <On Platform="Android">-12</On>
+                        </OnPlatform>
+                    </Image.TranslationY>
+                </Image>
+            </Grid>
+        </Grid>-->
 
+    </StackLayout>
+    </AbsoluteLayout>
 </ContentPage>

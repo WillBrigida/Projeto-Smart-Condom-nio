@@ -1,8 +1,14 @@
-﻿using CondominioSmart.Models;
+﻿using CondominioSmart.DataBase;
+using CondominioSmart.Infrastructure;
+using CondominioSmart.Models;
 using CondominioSmart.Services;
+using CondominioSmart.Views.PopUps;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -29,7 +35,8 @@ namespace CondominioSmart.ViewModels
         }
 
         private readonly IMessegeService _messegeService;
-        private readonly IReclamacaoRepository _reclamacaoRepository;
+        private readonly ReclamacaoRepository _reclamacaoRepository;
+        private readonly RealmRepository<Reclamacao>_realmRepository;
         #endregion
 
         #region Commands
@@ -40,7 +47,9 @@ namespace CondominioSmart.ViewModels
         #region Construtor
         public ReclamacoesViewModel()
         {
+            _realmRepository = new RealmRepository<Reclamacao>();
             _reclamacaoRepository = new ReclamacaoRepository();
+
         }
         #endregion
 
@@ -50,12 +59,12 @@ namespace CondominioSmart.ViewModels
         {
             if (!String.IsNullOrWhiteSpace(TitleReclamacao))
             {
-                MessagingCenter.Send(new Reclamacao {TextReclamacao = this.TextReclamacao, TitleReclamacao = this.TitleReclamacao}, "Confirmacao");
-                //Ao ser chamado, dispara a ação de quem estiver ouvindo, validado pela assinatura que neste 
-                //caso é a string "confirmacao"
-                var reclamacao = new Reclamacao()
-                { TextReclamacao = this.TextReclamacao, TitleReclamacao = this.TitleReclamacao };
-                _reclamacaoRepository.Insert(reclamacao);
+                MessagingCenter.Send(new Reclamacao
+                { TextReclamacao = this.TextReclamacao, TitleReclamacao = this.TitleReclamacao}, "Confirmacao");
+
+                //Ao ser clicado o botão, é disparado um comando para todos que estão
+                //ouvindo a classe. E é nos ouvintes que são implementado as ações.
+                //Os ouvintes são definidos através de uma assinatura que nesse caso é a string "Confirmacao".
             }
         }
         #endregion

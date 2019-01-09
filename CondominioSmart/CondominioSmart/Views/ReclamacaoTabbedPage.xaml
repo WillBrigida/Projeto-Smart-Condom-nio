@@ -4,13 +4,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tabs="clr-namespace:CondominioSmart.Views"
              x:Class="CondominioSmart.Views.ReclamacaoTabbedPage"
-             BarBackgroundColor="#2196F3"
-             BarTextColor="White"
-             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.ToolbarPlacement="Bottom"
              android:TabbedPage.BarItemColor="#66FFFFFF"
              android:TabbedPage.BarSelectedItemColor="White"
+    
+             BarBackgroundColor="#2196F3"
+             BarTextColor="White"
+             
              Title="Reclamações">
+    
 
 
     <TabbedPage.ToolbarItems>
@@ -18,10 +21,11 @@
             Text="{Binding Contador}"/>
     </TabbedPage.ToolbarItems>
 
+
     
-
-    <tabs:ReclamacoesPage Title="Abrir"  Icon="baseline_date_range_white_24dp"/>
-    <tabs:ListaReclamacoesPage Title="Lista" Icon="baseline_date_range_white_24dp"/>
-
+        <tabs:ReclamacoesPage Title="Abrir"  Icon="baseline_date_range_white_24dp"/>
+        <tabs:ListaReclamacoesPage Title="Lista" Icon="baseline_date_range_white_24dp"/>
+   
+    
 
 </TabbedPage>

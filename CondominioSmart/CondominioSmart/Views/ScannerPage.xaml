@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CondominioSmart.Views.ScannerPage"
     BackgroundColor="Transparent"
-    xmlns:Zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+    xmlns:Zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+    NavigationPage.HasNavigationBar="False">
 
 
 
@@ -42,8 +43,7 @@
                 </Zxing:ZXingScannerView>
 
                 <Zxing:ZXingDefaultOverlay 
-                            Opacity="0.9" 
-                            ShowFlashButton="True">
+                            Opacity="0.9" >
                 </Zxing:ZXingDefaultOverlay>
 
             </Grid>

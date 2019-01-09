@@ -7,9 +7,10 @@
     
     <Application.Resources>
         <ResourceDictionary>
+            <Color x:Key="Primary">#FFFFFF</Color>
             <infra:InstanceLocator x:Key="Locator" />
 
-            <OnPlatform  x:Key="IconFontFamily" x:TypeArguments="x:String" Android="fa-solid-900.ttf#Font Awesome 5 Free Regular" />
+            <OnPlatform  x:Key="IconFontFamily" x:TypeArguments="x:String" Android="fa-solid-900.ttf#fa-solid-900.ttf" />
             
             <!--<OnPlatform x:Key="IconFontFamily" x:TypeArguments="x:String">
                 <On Platform="Android">fa-solid-900.ttf#Font Awesome 5 Free Regular</On>

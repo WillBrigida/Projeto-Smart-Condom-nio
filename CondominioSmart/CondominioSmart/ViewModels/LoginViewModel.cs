@@ -41,7 +41,7 @@ namespace CondominioSmart.ViewModels
             var mdp = (Application.Current.MainPage as MasterDetailPage);
             var navPage = mdp.Detail as NavigationPage;
             IsRunning = true;
-            await Task.Delay(5000);
+            await Task.Delay(3000);
 
            
             await App.Current.MainPage.Navigation.PopModalAsync();

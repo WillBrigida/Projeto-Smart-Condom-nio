@@ -9,37 +9,6 @@
         <StackLayout
         Margin="20">
 
-         
-            <DatePicker>
-            </DatePicker>
-            
-            
-            <controls:CustomPicker
-                Title="Teste">
-                <Picker.Items>
-                    <x:String>jhghjgl</x:String>
-                    <x:String>kgjhjhghj</x:String>
-                    <x:String>jhghjgl</x:String>
-                    <x:String>jhghjgl</x:String>
-                    <x:String>jhghjgl</x:String>
-                    <x:String>jhghjgl</x:String>
-                    <x:String>jhghjgl</x:String>
-                    <x:String>kgjhjhghj</x:String>
-                    <x:String>kgjhjhghj</x:String>
-                    <x:String>kgjhjhghj</x:String>
-                    <x:String>kgjhjhghj</x:String>
-                    <x:String>kgjhjhghj</x:String>
-                </Picker.Items>
-
-            </controls:CustomPicker>
-
-            <Picker>
-                <Picker.Items>
-                    <x:String>1</x:String>
-                    <x:String>2</x:String>
-                </Picker.Items>
-               
-            </Picker>
 
 
             <controls:CustomEntry
@@ -48,7 +17,7 @@
                 MaxLength="30" 
                 Margin="0,0,0,15" />
 
-            <controls:CustomEditor
+            <controls:CustomEditor 
                 Text="{Binding TextReclamacao}"
                 Placeholder="  Texto" 
                 HeightRequest="180" 

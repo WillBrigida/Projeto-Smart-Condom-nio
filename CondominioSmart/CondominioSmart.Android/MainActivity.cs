@@ -4,7 +4,8 @@ using Android.OS;
 
 namespace CondominioSmart.Droid
 {
-    [Activity(Label = "CondominioSmart",
+    [Activity(
+        Label = "CondominioSmart",
        Icon = "@mipmap/icon",
        Theme = "@style/MainTheme",
        ScreenOrientation = ScreenOrientation.Portrait)] // Sem rotação de tela

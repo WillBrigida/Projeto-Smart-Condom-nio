@@ -11,69 +11,36 @@ using Xamarin.Forms.Xaml;
 
 namespace CondominioSmart.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MenuPage : MasterDetailPage
-	{
-        //private MenuViewModel ViewModel => BindingContext as MenuViewModel;
-        public string Icon { get; set; }
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MenuPage : MasterDetailPage
+    {
+        private MenuViewModel ViewModel => BindingContext as MenuViewModel;
 
 
-        public MenuPage ()
-		{
-			InitializeComponent ();
+        public MenuPage()
+        {
+            InitializeComponent();
+            this.BindingContext = new MenuViewModel();
 
-            Icon = FontAwesome.Film;
 
             Detail = new NavigationPage(new PortariaPage());
 
-            int contador = 0;
-            if (contador == 0)
+
+            Detail.Navigation.PushModalAsync(new LoginPage());
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await ViewModel.LoadAsync();
+        }
+
+        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
             {
-                Detail.Navigation.PushModalAsync(new LoginPage());
-                contador += 1;
+                ViewModel.NavigationCommand.Execute(e.SelectedItem);
             }
-            //Detail = new PortariaPage();
-        }
-
-        //protected override async void OnAppearing()
-        //{
-        //    base.OnAppearing();
-        //    await ViewModel.LoadAsync();
-        //}
-        private void GoPage1(object sender, System.EventArgs e)
-        {
-            Detail.Navigation.PushAsync(new ReclamacaoTabbedPage());
-            IsPresented = false;
-        }
-
-        private void GoPage2(object sender, System.EventArgs e)
-        {
-            Detail.Navigation.PushAsync(new InformacoesPage());
-            IsPresented = false;
-        }
-
-        private void GoPage3(object sender, System.EventArgs e)
-        {
-            Detail.Navigation.PushAsync(new PopsPage());
-            IsPresented = false;
-        }
-
-        private void GoPage4(object sender, System.EventArgs e)
-        {
-            Detail.Navigation.PushAsync(new AtendimentosPage());
-            IsPresented = false;
-        }
-
-        private void GoPage5(object sender, System.EventArgs e)
-        {
-            Detail.Navigation.PushModalAsync(new ScannerPage());
-            IsPresented = false;
-        }
-
-        private void GoPage6(object sender, System.EventArgs e)
-        {
-            Detail.Navigation.PushModalAsync(new ScannerPage());
-            IsPresented = false;
         }
 
     }

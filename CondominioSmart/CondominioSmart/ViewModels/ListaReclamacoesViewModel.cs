@@ -1,8 +1,11 @@
-﻿using CondominioSmart.Models;
+﻿using CondominioSmart.DataBase;
+using CondominioSmart.Models;
 using CondominioSmart.Services;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -12,7 +15,9 @@ namespace CondominioSmart.ViewModels
     public class ListaReclamacoesViewModel : BaseViewModel
     {
         #region Propriedade
-        private readonly IReclamacaoRepository _reclamacaoRepository;
+        private readonly RealmRepository<Reclamacao> _realmRepository;
+        private readonly ReclamacaoRepository _reclamacaoRepository;
+
 
         private ObservableCollection<Reclamacao> _listaReclamacao;
 
@@ -21,6 +26,8 @@ namespace CondominioSmart.ViewModels
             get { return _listaReclamacao; }
             set { SetProperty(ref _listaReclamacao, value); }
         }
+
+
         #endregion
 
         #region Commands
@@ -31,6 +38,8 @@ namespace CondominioSmart.ViewModels
         public ListaReclamacoesViewModel()
         {
             _reclamacaoRepository = new ReclamacaoRepository();
+
+           // _realmRepository = new RealmRepository<Reclamacao>();
             AdicionarLista();
             Init();
         }
@@ -41,7 +50,15 @@ namespace CondominioSmart.ViewModels
         {
             MessagingCenter.Subscribe<Reclamacao>(this, "Confirmacao", message =>
             {
-                Init();
+                try
+                {
+                    _reclamacaoRepository.Insert(message);
+                    Init();
+                }
+                catch (Exception Ex)
+                {
+                    App.Current.MainPage.DisplayAlert("", Ex.Message, "ok");
+                }
             });
         }
 
@@ -52,7 +69,8 @@ namespace CondominioSmart.ViewModels
 
         private void Init()
         {
-            ListaReclamacao = new ObservableCollection<Reclamacao>(List());
+            var listaReclamacao = List();
+            ListaReclamacao = new ObservableCollection<Reclamacao>(listaReclamacao);
         }
         #endregion
 

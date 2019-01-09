@@ -1,8 +1,12 @@
-﻿using CondominioSmart.Models;
+﻿using CondominioSmart.DataBase;
+using CondominioSmart.Models;
 using CondominioSmart.Services;
+using CondominioSmart.Views.PopUps;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace CondominioSmart.ViewModels
@@ -10,7 +14,7 @@ namespace CondominioSmart.ViewModels
     public class ReclamacaoTabbedViewModel : BaseViewModel
     {
         #region Propriedade
-        private int _contador;
+        private int _contador = 0;
 
         public int Contador
         {
@@ -18,7 +22,10 @@ namespace CondominioSmart.ViewModels
             set { SetProperty(ref _contador, value); }
         }
 
-        private readonly IReclamacaoRepository _reclamacaoRepository;
+        private readonly RealmRepository<Reclamacao> _realmRepository;
+        private readonly ReclamacaoRepository _reclamacaoRepository;
+
+
 
         #endregion
 
@@ -29,7 +36,9 @@ namespace CondominioSmart.ViewModels
         #region Construtor
         public ReclamacaoTabbedViewModel()
         {
+           // _realmRepository = new RealmRepository<Reclamacao>();
             _reclamacaoRepository = new ReclamacaoRepository();
+
             MudarContador();
             Init();
         }
@@ -47,7 +56,14 @@ namespace CondominioSmart.ViewModels
 
         private void Init()
         {
-            Contador = _reclamacaoRepository.GetAll().Count;
+            try
+            {
+                Contador = _reclamacaoRepository.GetAll().Count;
+            }
+            catch (Exception Ex)
+            {
+                App.Current.MainPage.DisplayAlert("", Ex.Message, "ok");
+            }
         }
         #endregion
     }
